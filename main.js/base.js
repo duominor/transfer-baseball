@@ -623,7 +623,7 @@ function selectDialogue(
             sectionRect.left + sectionRect.width / 2;
 
         const targetY =
-            sectionRect.top + sectionRect.height * 0.45;
+            sectionRect.top + sectionRect.height * 0.30;
 
 
         const moveX =
