@@ -735,11 +735,10 @@ body {
 @media (max-width: 768px) {
 
 
-.intro_section,
 .dungsil_section,
 .interview_section,
 .three_words_section {
-    min-height: 100svh;
+    min-height: 100dvh;
 }
 
 
