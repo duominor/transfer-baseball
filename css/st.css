@@ -725,7 +725,7 @@ body {
 
 /* 임시: X소개서 작업 전까지 숨김 */
 .x_letter_section {
-    display: none;
+    display: block;
 }    
 
 
