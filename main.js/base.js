@@ -231,6 +231,28 @@ const interviewData = {
             `"제가 말했어요."`
     },
 
+    oseom: {
+        theme: "emerald",
+
+        question:
+            "Q. X와 헤어지는 걸 생각해본 적이 있었나요?",
+
+        firstName:
+            "오태곤",
+
+        firstAnswer:
+            `“없었던 것 같습니다.<br>
+              힘들면 같이 힘들면 된다고 생각했어요.”`,
+
+        secondName:
+            "한유섬",
+
+        secondAnswer:
+            `“있었습니다.<br>
+              이상하게 잘 지낼 때 더 많이 생각했습니다.”`
+    },
+
+
 
     sanggeon: {
         theme: "purple",
@@ -770,6 +792,16 @@ selectDialogue(
     "gwakcheol"
 );
 
+
+// 오태곤 × 한유섬
+selectDialogue(
+    ".dialogue_02",
+    ".couple_02",
+    ".couple_info_02",
+    "oseom"
+);
+
+
 // 박상원 × 박건우
 selectDialogue(
     ".dialogue_03",
@@ -1011,6 +1043,42 @@ const threeWordsData = {
             }
         }
     },
+    
+oseom: {
+
+    theme: "emerald",
+
+    firstName: "오태곤",
+    secondName: "한유섬",
+
+    words: {
+
+        word1: {
+            label: "기다림",
+
+            question: "Q. X가 자신을 기다리고 있다고 느낀 순간이 있었나요?",
+            first: "“형이 늦으면 기다리면 되죠.<br>그걸 특별하게 생각한 적은 없었습니다.”",
+            second: "“끝나는 거요. 별일이 없을 때도 가끔 그런 생각을 했습니다.”"
+        },
+
+        word2: {
+            label: "겁",
+
+            question: "Q. X를 좋아하면서 가장 무서웠던 건 무엇이었나요?",
+            first: "“형이 혼자 괜찮다고 결론 내리는 거요.<br>제가 괜찮은지는 안 물어보고.”",
+            second: "“끝나는 거요.<br> 별일이 없을 때도 가끔 그런 생각을 했습니다.”"
+        },
+
+        word3: {
+            label: "함께",
+
+            question: "Q. 사랑하는 사람을 위해 포기할 수 있는 것도 사랑이라고 생각하나요?",
+            first: "“잘 모르겠습니다.<br> 저는 같이 방법을 찾는 게 먼저라고 생각합니다.”",
+            second: "“네. 그 사람한테 그게 더 좋은 일이라면요.”"
+        }
+    }
+},    
+
 
 
 sanggeon: {
@@ -1069,7 +1137,7 @@ dongtae: {
             label: "새벽",
 
             question: "Q. 친구였을 때와 연인이 된 뒤, 새벽의 대화는 달라졌나요?",
-            first: "“달라졌어요.<br>전에는 아무 말이나 했는데, 사귀고 나서는 한 번씩 생각하고 보냈습니다.”",
+            first: "“달라졌어요. 전에는 아무 말이나 했는데,<br>사귀고 나서는 한 번씩 생각하고 보냈습니다.”",
             second: "“저는 비슷했던 것 같아요.<br>동주가 보내면 답하고, 그러다 늦게까지 얘기하고.”"
         },
 

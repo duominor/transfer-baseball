@@ -26,11 +26,12 @@ body{
     background-color: #111517;
 }
 
-html,
-body {
+html{
     overflow-x: hidden;
 }
 
+
+/* 피씨기준 */
 
 
 .opening_wrap {
@@ -231,7 +232,7 @@ body {
 .interview_scroll_cue{
     position: absolute;
     left: 50%;
-    bottom: 85px;
+    bottom: 75px;
     transform: translateX(-50%);
     font-size: 35px;
     color: #f1f0eb;
@@ -242,34 +243,45 @@ body {
 
 
 
+/* 모바일기준 */
 
 
 
+    .dungsil_section,
+    .interview_section,
+    .three_words_section{
+        overflow-x: clip;
+    }
+
+
+
+.back_to_dungsil{
+    font-size: 16px;
+    font-weight: 400;
+}
 
 .interview_section {
     display: none;
-
     position: relative;
     width: 100%;
     min-height: 100vh;
-
     padding: 100px 24px 120px;
     box-sizing: border-box;
-
     background: #111517;
     color: #E7E7E3;
 }
+
 
 .interview_section.is_open {
     display: block;
 }
 
 .interview_question {
-    width: 100%;
-    margin-bottom: 110px;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 80px;
     font-family: "Song Myung", serif;
     font-size: 24px;
-    line-height: 1.6;
     text-align: center;
 }
 
@@ -282,22 +294,22 @@ body {
 
 .interview_name {
     display: block;
-    margin-bottom: 14px;
-    font-size: 20px;
+    margin-bottom: 15px;
+    font-size: 18px;
     color: #4FD1C5;
 
 }
 
 .interview_answer p {
     margin: 0;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.7;
 }
 
 .answer_first {
     width: 80%;
     margin-right: auto;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
     margin-left: 10px;
 
     
@@ -305,10 +317,10 @@ body {
 }
 
 .answer_second{
-    width: 70%;
+    width: 80%;
     margin-left: auto;
     text-align: right;
-    margin-top: -90px;
+    margin-top: -100px;
     margin-right: 10px
 
 }
@@ -342,7 +354,7 @@ body {
 
 .trigger_second {
     margin-top: 220px;
-    margin-bottom: 5px;
+    margin-bottom: -20px;
 }
 
 .interview_answer p {
@@ -358,6 +370,8 @@ body {
     pointer-events: none;
     z-index: 0;
 }
+
+
 
 /* 곽빈 쪽 */
 .interview_light_left {
@@ -400,8 +414,8 @@ body {
 
 
 .interview_scroll_cue{
-   bottom: 30px;
-   font-size: 30px;
+   bottom: 65px;
+   font-size: 28px;
 
 }
 
@@ -431,7 +445,7 @@ body {
     font-family: "Song Myung", serif;
     font-size: 28px;
     cursor: pointer;
-     z-index: 5;
+    z-index: 5;
 
 }
 
@@ -455,12 +469,15 @@ body {
 }
 
 
+
+
+
 .three_words_scroll_cue {
     position: absolute;
     left: 50%;
-    bottom: 36px;
+    bottom: 65px;
+    font-size: 28px;
     transform: translateX(-50%);
-    font-size: 35px;
     color: #fff;
     opacity: 0;
     pointer-events: none;
@@ -478,8 +495,8 @@ body {
     border: 0;
     background: transparent;
     font-family: "Song Myung", serif;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 400;
     color: #f1f0eb;
     opacity: 0;
     pointer-events: none;
@@ -490,13 +507,13 @@ body {
 
 .words_question {
     position: absolute;
-    top: 25%;
+    width: 80%;
+    top: 20%;
     left: 50%;
     transform: translateX(-50%);
-    width: calc(100% - 48px);
     font-family: "Song Myung", serif;
-    font-size: 24px;
-    line-height: 1.6;
+    font-size: 20px;
+    line-height: 1.7;
     text-align: center;
     color: #E7E7E3;
     opacity: 0;
@@ -513,27 +530,23 @@ body {
 .words_answer {
     position: absolute;
     z-index: 2;
-
     font-family: "Song Myung", serif;
-
     opacity: 0;
 }
+
 
 .words_name {
     display: block;
     margin-bottom: 14px;
-
-    font-size: 20px;
+    font-size: 18px;
     color: #8BAEAA;
 
 }
 
 .words_answer p {
     margin: 0;
-
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.7;
-
     color: #E7E7E3;
 }
 
@@ -550,7 +563,7 @@ body {
 /* 곽빈 - 왼쪽 */
 
 .words_answer_first {
-    top: 42%;
+    top: 39%;
     left: 24px;
     width: 80%;
     margin-left: 10px;
@@ -560,9 +573,9 @@ body {
 /* 정철원 - 오른쪽 */
 
 .words_answer_second {
-    top: 62%;
+    top: 66%;
     right: 24px;
-    width: 75%;
+    width: 80%;
     text-align: right;
     margin-right: 10px;
 
@@ -570,10 +583,8 @@ body {
 
 .words_light {
     position: absolute;
-
     border-radius: 50%;
     filter: blur(90px);
-
     pointer-events: none;
     z-index: 0;
 }
@@ -606,18 +617,13 @@ body {
 
 .words_next_scroll_cue {
     position: absolute;
-
     left: 50%;
-
     transform: translateX(-50%);
-
     bottom: 30px;
-    font-size: 30px;
+    font-size: 24px;
     color: #fff;
-
     opacity: 0;
     pointer-events: none;
-
     z-index: 3;
 }
 
@@ -632,8 +638,8 @@ body {
     background: transparent;
 
     font-family: "Song Myung", serif;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 400;
     color: #f1f0eb;
 
     opacity: 0;
@@ -725,7 +731,7 @@ body {
 
 /* 임시: X소개서 작업 전까지 숨김 */
 .x_letter_section {
-    display: block;
+    display: none;
 }    
 
 
@@ -807,6 +813,7 @@ body {
         font-size: 22px;
         text-align: center;
         margin-top: 20px;
+        line-height: 1.4;
     }
 
 
@@ -817,9 +824,16 @@ body {
     }
 
 
+    .interview_question {
+        font-size: 22px;
+        line-height: 1.5;
+
+    }
+
+
 
     .interview_answer {
-        width: 82%;
+        width: 80%;
     }
 
     .interview_answer p {
@@ -862,7 +876,7 @@ body {
 .couple_info {
   margin-top: 30px;
   font-size: 26px;
-  line-height: 1.5;
+  line-height: 1.6;
 
 }
 
@@ -874,15 +888,16 @@ body {
 
     .interview_question {
         max-width: 900px;
-        margin: 0 auto 220px;
-        font-size: 35px;
+        margin: 0 auto;
+        margin-bottom: 150px;
+        font-size: 32px;
     }
 
     .interview_answer p,
     .interview_answer span,
     .words_answer p,
     .words_answer span{
-        font-size: 28px;
+        font-size: 26px;
     }
   
     .answer_first {
@@ -893,16 +908,16 @@ body {
     }
 
     .answer_second {
-        width: 40%;
+        width: 45%;
         margin-left: auto;
         margin-right: 12%;
-
         text-align: right;
+        margin-top: -100px;
     }
 
 
     .words_question{
-        font-size: 35px;
+        font-size: 32px;
     }
 
      .word_01{
@@ -921,7 +936,7 @@ body {
     }
 
     .story_word {
-        font-size: 38px;
+        font-size: 36px;
     }
 
 
@@ -966,12 +981,16 @@ body {
 }
 
 
+.interview_scroll_cue{
+    bottom: 78px;
+}
+
+
 
 
 
 .back_to_keywords {
     position: absolute;
-
     right: 24px;
     bottom: 40px;
     font-size: 16px;
