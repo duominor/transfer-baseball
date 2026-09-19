@@ -196,8 +196,8 @@ html{
 
 .back_to_dungsil {
     position: absolute;
-    right: 30px;
-    bottom: 35px;
+    right: 50px;
+    bottom: 50px;
     z-index: 5;
     border: none;
     outline: none;
@@ -258,6 +258,8 @@ html{
 .back_to_dungsil{
     font-size: 16px;
     font-weight: 400;
+    right: 30px;
+    bottom: 35px;
 }
 
 .interview_section {
@@ -490,8 +492,8 @@ html{
 
 .back_to_words {
     position: absolute;
-    right: 24px;
-    bottom: 36px;
+    right: 30px;
+    bottom: 40px;
     border: 0;
     background: transparent;
     font-family: "Song Myung", serif;
@@ -630,22 +632,17 @@ html{
 
 .back_to_keywords {
     position: absolute;
-
     right: 30px;
     bottom: 40px;
-
     border: 0;
     background: transparent;
-
     font-family: "Song Myung", serif;
     font-size: 16px;
     font-weight: 400;
     color: #f1f0eb;
-
     opacity: 0;
     pointer-events: none;
     cursor: pointer;
-
     z-index: 6;
 }
 
@@ -817,6 +814,18 @@ html{
     }
 
 
+/* 
+  .back_to_dungsil {
+    right: 50px;
+    bottom: 50px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #f1f0eb;
+
+    } */
+
+
+
     .story_scroll_cue,
     .interview_scroll_cue{
     font-size: 25px;
@@ -870,13 +879,6 @@ html{
 
 @media (min-width: 769px) {
 
-
- .back_to_dungsil {
-    right: 40px;
-    font-size: 20px;
-    font-weight: 400;
-
-    }
 
 
     
