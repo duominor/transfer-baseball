@@ -898,7 +898,7 @@ html{
     .interview_question {
         max-width: 900px;
         margin: 0 auto;
-        margin-bottom: 150px;
+        margin-bottom: 200px;
         font-size: 32px;
     }
 
@@ -913,6 +913,7 @@ html{
         width: 45%;
         margin-left: 12%;
         margin-right: auto;
+        margin-top: -50px;
   
     }
 
