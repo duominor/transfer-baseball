@@ -790,6 +790,8 @@ html{
     font-size: 22px;
     font-weight: 500;
     margin-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
     opacity: 0;
 }
 
@@ -1138,5 +1140,8 @@ html{
     margin-top: 20px;
 }
 
+.next_answer{
+    font-size: 22px;
+}
 
 }
