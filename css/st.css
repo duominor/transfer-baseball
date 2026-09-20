@@ -749,7 +749,7 @@ html{
     background: rgb(241, 240, 235);
     color:  #111517;
     font-family: "Song Myung", serif;
-    font-size: 22px;
+    font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -782,12 +782,12 @@ html{
 
 .next_love_label{
     color: #747a7d;
-    font-size: 22px;
-    letter-spacing: 0.1em;
+    font-size: 18px;
+
 }
 
 .next_love_header h2{
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 500;
     margin-top: 20px;
     opacity: 0;
@@ -801,7 +801,7 @@ html{
 }
 
 .next_answer {
-    width: min(680px, 88%);
+    width: min(600px, 85%);
     height: 300px;
     margin: 0 auto;
     display: flex;
