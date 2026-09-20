@@ -1093,7 +1093,7 @@ sanggeon: {
             label: "고백",
 
             question: "Q. 처음 마음을 확인한 순간을 기억하나요?",
-            first: "“기억합니다.생각했던 것보다 별일 없어서 조금 당황했습니다.”",
+            first: "“기억합니다. 생각했던 것보다 별일 없어서 조금 당황했습니다.”",
             second: "“웃었던 것 같아요.<br>상원이가 너무 심각한 얼굴을 하고 있어서요.”"
         },
 
@@ -1589,3 +1589,104 @@ backToKeywords.addEventListener("click", function () {
     });
 
 });
+
+
+gsap.utils.toArray(".letter_piece").forEach((piece) => {
+    gsap.fromTo(piece,
+        {
+            opacity: 0.2,
+            y: 15
+        },
+        {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            scrollTrigger: {
+                trigger: piece,
+                start: "top 80%",
+                toggleActions: "play none none none"
+            }
+        }
+    );
+});
+
+
+
+gsap.to(".x_letter_section", {
+    backgroundColor: "#F1F0EB",
+    color: "#111517",
+    ease: "none",
+
+    scrollTrigger: {
+        trigger: ".x_letter_section",
+        start: "76% center",
+        end: "bottom bottom",
+        scrub: true
+    }
+});
+
+
+const xEndTl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".x_end",
+        start: "top top",
+        end: "+=70%",
+        scrub: true,
+        pin: true
+    }
+});
+
+xEndTl
+    .to({}, { duration: 0.4 })
+    .to(".x_end_mark", {
+        opacity: 0,
+        duration: 0.9
+    });
+
+
+// NEXT LOVE 타이틀
+gsap.to(".next_love_label", {
+    opacity: 1,
+    duration: 1,
+
+    scrollTrigger: {
+        trigger: ".next_love_content",
+        start: "top 75%",
+        toggleActions: "play none none none"
+    }
+});
+
+
+// 질문
+gsap.to(".next_love_header h2", {
+    opacity: 1,
+    duration: 0.3,
+    delay: 0.2,
+
+    scrollTrigger: {
+        trigger: ".next_love_content",
+        start: "top 10%",
+        toggleActions: "play none none none"
+    }
+});
+
+gsap.utils.toArray(".next_answer").forEach((answer) => {
+
+    gsap.fromTo(answer,
+        {
+            opacity: 0
+        },
+        {
+            opacity: 1,
+            duration: 1.2,
+
+            scrollTrigger: {
+                trigger: answer,
+                start: "top 50%",
+                toggleActions: "play none none none"
+            }
+        }
+    );
+
+});
+
