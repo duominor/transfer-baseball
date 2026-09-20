@@ -1620,11 +1620,10 @@ const storyData = {
         firstLetter: [
             `철원이는 웃음도 눈물도 많은 사람이었습니다.
             기쁜 것도, 속상한 것도 잘 숨기지 못했고
-            그래서 많은 사람들이 철원이의 여러 얼굴을 알고 있었습니다.
-            그게 가끔은 질투가 났습니다.`,
+            그래서 많은 사람들이 철원이의 여러 얼굴을 알고 있었습니다.`,
 
-            `웃는 얼굴은 누구에게나 보여줘도 괜찮았는데,
-            무너지는 모습만큼은 나한테만 보여줬으면 좋겠다고 생각했습니다.
+            `그게 가끔은 질투가 났습니다. 웃는 얼굴은 누구에게나 보여줘도 괜찮았는데,
+            무너지는 모습만큼은 나한테만 보여줬으면 좋겠다고 생각했거든요.
             지금 생각하면 조금 이기적인 마음이었던 것 같습니다.`,
 
             `그런 마음까지 들게 할 만큼
@@ -1650,21 +1649,16 @@ const storyData = {
         secondLetter: [
              `  빈이는 제 말을 잘 들어주는 사람이었습니다.
                 제가 별것도 아닌 이야기를 오래 해도
-                중간에 끊지 않았고,
-                제가 웃으면 같이 웃어주는 사람이었습니다.`,
+                같이 웃어주는 사람이었습니다.`,
 
             `   그래서 저는 빈이 옆에서
                 말을 참 많이 했습니다.
                 좋은 일이 있어도 먼저 말했고,
-                힘든 일이 있어도 결국에는 말했습니다.
+                힘든 일이 있어도 다 말했습니다.
                 그게 너무 당연해서
                 언제부터 그렇게 됐는지는 잘 기억나지 않습니다.`,
 
-            `   저는 빈이의 그런 점을 좋아했습니다.
-                크게 표현하는 사람은 아니었는데
-                제가 신나서 말을 하면 가만히 웃어줬고,
-                제가 힘들어하면 괜찮아질 때까지 옆에 있었습니다.
-                같이 있으면 제가 어떤 모습이어도
+            `   같이 있으면 제가 어떤 모습이어도
                 괜찮을 것 같은 기분이 들었습니다.
                 그래서 빈이한테는
                 좋은 모습만 보여주고 싶다는 생각을
@@ -1673,9 +1667,13 @@ const storyData = {
             `   연인이 되고 나서도 크게 달라지지는 않았습니다.
                 겉으로는요, 
                 그런데 저는 생각보다 많이 설렜습니다.
-                그래서 오래 갈 거라고 생각했던 것 같습니다.`,
+                그래서 오래 갈 거라고 생각했던 것 같습니다.
+                그리고 그만큼 같이 많은 걸 해보기도 했구요.`,
 
-            `   빈이랑 헤어진 걸 후회하지 않습니다.
+            `   우리가 헤어진 이유는 설명하기 어려워요, 
+                아마 우리만 알 것 같은데 그래서 먼저 헤어지자고 했을때 
+                빈이는 붙잡지 않았어요 사실.. 조금 서운하기도 했는데.. 
+                그래도 헤어진 걸 후회하지 않습니다.
                 빈이를 좋아했던 것도 후회하지 않고요.
                 그 사람과 보낸 4년 3개월은
                 끝났다고 해서 없어지는 시간이 아니니까요.`
@@ -1690,7 +1688,16 @@ const storyData = {
             second:
                 `네,
                 다시 누군가를 많이 좋아해보고 싶어요.`
+        },
+
+        nextPerson: {
+            first: `귀여운 사람이요.
+                제가 귀여운 사람을 좋아해서요.`,
+
+            second: `좋아하면 좋아한다고 티 많이 내주는 사람이요.`
         }
+
+       
     }
 
 };
@@ -1765,6 +1772,15 @@ function setStory(coupleKey) {
     document.querySelector(".next_text_second").innerHTML = 
     data.nextLove.second;
 
+    // NEXT PERSON
+document.querySelector(".next_person_name_first").textContent = data.firstName;
+document.querySelector(".next_person_name_second").textContent = data.secondName;
+
+document.querySelector(".next_person_content .next_text_first").textContent =
+    data.nextPerson.first;
+
+document.querySelector(".next_person_content .next_text_second").textContent =
+    data.nextPerson.second;
 
 
 }
@@ -1850,6 +1866,49 @@ function initStoryAnimations() {
 
     });
 
+
+    // NEXT PERSON
+gsap.to(".next_person_label", {
+    opacity: 1,
+    duration: 1,
+
+    scrollTrigger: {
+        trigger: ".next_person_content",
+        start: "top 75%",
+        toggleActions: "play none none none"
+    }
+});
+
+gsap.to(".next_person_header h2", {
+    opacity: 1,
+    duration: 0.8,
+
+    scrollTrigger: {
+        trigger: ".next_person_content",
+        start: "top 65%",
+        toggleActions: "play none none none"
+    }
+});
+
+gsap.utils.toArray(".next_person_answer").forEach((answer) => {
+
+    gsap.fromTo(
+        answer,
+        { opacity: 0 },
+        {
+            opacity: 1,
+            duration: 1.2,
+
+            scrollTrigger: {
+                trigger: answer,
+                start: "top 55%",
+                toggleActions: "play none none none"
+            }
+        }
+    );
+
+});
+
 }
 
 
@@ -1870,6 +1929,7 @@ function openGwakcheolStory() {
     document.querySelector(".x_end").style.display = "flex";
     document.querySelector(".next_intro").style.display = "flex";
     document.querySelector(".next_love_content").style.display = "block";
+    document.querySelector(".next_person_content").style.display = "block";
 
     // 화면이 열린 다음 GSAP 연결
     requestAnimationFrame(() => {
