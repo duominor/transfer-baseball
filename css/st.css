@@ -828,9 +828,12 @@ html{
 }
 
 
-
-
-
+.x_letter_section,
+.x_end,
+.next_intro,
+.next_love_content {
+    display: none;
+}
 
 
 

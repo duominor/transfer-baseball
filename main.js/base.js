@@ -1257,6 +1257,9 @@ function setThreeWords(coupleKey) {
         });
 
     });
+
+
+
 }
 
 
@@ -1290,6 +1293,11 @@ storyWords.forEach((word) => {
     word.addEventListener("click", function () {
 
         if (!currentThreeWords) return;
+
+        // 곽철에서 키워드를 하나라도 선택하면 X소개서 열기
+if (currentThreeWordsKey === "gwakcheol") {
+    openGwakcheolStory();
+}
 
 
         // 중복 클릭 방지
@@ -1591,102 +1599,286 @@ backToKeywords.addEventListener("click", function () {
 });
 
 
-gsap.utils.toArray(".letter_piece").forEach((piece) => {
-    gsap.fromTo(piece,
-        {
-            opacity: 0.2,
-            y: 15
-        },
-        {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            scrollTrigger: {
-                trigger: piece,
-                start: "top 80%",
-                toggleActions: "play none none none"
-            }
+
+
+
+
+// x소개서
+
+const storyData = {
+
+    gwakcheol: {
+        firstName: "곽빈",
+        secondName: "정철원",
+
+        firstTitle: "곽빈 → 정철원",
+        secondTitle: "정철원 → 곽빈",
+
+        theme: "emerald",
+
+
+        firstLetter: [
+            `철원이는 웃음도 눈물도 많은 사람이었습니다.
+            기쁜 것도, 속상한 것도 잘 숨기지 못했고
+            그래서 많은 사람들이 철원이의 여러 얼굴을 알고 있었습니다.
+            그게 가끔은 질투가 났습니다.`,
+
+            `웃는 얼굴은 누구에게나 보여줘도 괜찮았는데,
+            무너지는 모습만큼은 나한테만 보여줬으면 좋겠다고 생각했습니다.
+            지금 생각하면 조금 이기적인 마음이었던 것 같습니다.`,
+
+            `그런 마음까지 들게 할 만큼
+            저는 철원이를 많이 좋아했습니다.
+            저희를 보는 사람들은
+            아마 꽤 잔잔한 연애를 했다고 생각했을 겁니다.
+            그런데 잔잔하다는 게
+            마음까지 작았다는 뜻은 아니었습니다.`,
+
+            `저희는 잔잔했고,
+            그만큼 뜨거웠습니다.
+            그래서 헤어질 때도
+            누가 잘못했다고 생각하지 않았습니다.
+            좋아하는 마음이 없어진 것도 아니었습니다.`,
+
+            `제가 아는 정철원은
+            제가 가장 오래 설명하지 않아도 됐던 사람입니다.
+            그리고 지금도
+            그때의 저희가 잘못됐다고 생각하지 않습니다.`
+        ],
+
+
+        secondLetter: [
+             `  빈이는 제 말을 잘 들어주는 사람이었습니다.
+                제가 별것도 아닌 이야기를 오래 해도
+                중간에 끊지 않았고,
+                제가 웃으면 같이 웃어주는 사람이었습니다.`,
+
+            `   그래서 저는 빈이 옆에서
+                말을 참 많이 했습니다.
+                좋은 일이 있어도 먼저 말했고,
+                힘든 일이 있어도 결국에는 말했습니다.
+                그게 너무 당연해서
+                언제부터 그렇게 됐는지는 잘 기억나지 않습니다.`,
+
+            `   저는 빈이의 그런 점을 좋아했습니다.
+                크게 표현하는 사람은 아니었는데
+                제가 신나서 말을 하면 가만히 웃어줬고,
+                제가 힘들어하면 괜찮아질 때까지 옆에 있었습니다.
+                같이 있으면 제가 어떤 모습이어도
+                괜찮을 것 같은 기분이 들었습니다.
+                그래서 빈이한테는
+                좋은 모습만 보여주고 싶다는 생각을
+                별로 하지 않았던 것 같습니다.`,
+
+            `   연인이 되고 나서도 크게 달라지지는 않았습니다.
+                겉으로는요, 
+                그런데 저는 생각보다 많이 설렜습니다.
+                그래서 오래 갈 거라고 생각했던 것 같습니다.`,
+
+            `   빈이랑 헤어진 걸 후회하지 않습니다.
+                빈이를 좋아했던 것도 후회하지 않고요.
+                그 사람과 보낸 4년 3개월은
+                끝났다고 해서 없어지는 시간이 아니니까요.`
+        ],
+
+        nextLove: {
+            first:
+                `네,
+                철원이도 좋은 사람을 만났으면 좋겠습니다.
+                힘들 때는 그 사람한테 꼭 말했으면 좋겠고요.`,
+
+            second:
+                `네,
+                다시 누군가를 많이 좋아해보고 싶어요.`
         }
-    );
-});
-
-
-
-gsap.to(".x_letter_section", {
-    backgroundColor: "#F1F0EB",
-    color: "#111517",
-    ease: "none",
-
-    scrollTrigger: {
-        trigger: ".x_letter_section",
-        start: "76% center",
-        end: "bottom bottom",
-        scrub: true
     }
-});
+
+};
 
 
-const xEndTl = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".x_end",
-        start: "top top",
-        end: "+=70%",
-        scrub: true,
-        pin: true
-    }
-});
+function initLetterFade() {
 
-xEndTl
-    .to({}, { duration: 0.4 })
-    .to(".x_end_mark", {
-        opacity: 0,
-        duration: 0.9
+    gsap.utils.toArray(".letter_piece").forEach((piece) => {
+
+        gsap.fromTo(piece,
+            {
+                opacity: 0.2,
+                y: 15
+            },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+
+                scrollTrigger: {
+                    trigger: piece,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            }
+        );
+
+    });
+
+}
+
+function setStory(coupleKey) {
+
+    const data = storyData[coupleKey];
+
+    if (!data) return;
+
+    // X소개서 이름
+    document.querySelector(".x_name_first").textContent = data.firstTitle;
+    document.querySelector(".x_name_second").textContent = data.secondTitle;
+
+    // X소개서 본문
+    document.querySelector(".x_body_first").innerHTML =
+        data.firstLetter
+            .map(text => `
+                <div class="letter_piece">
+                    <p>${text}</p>
+                </div>
+            `)
+            .join("");
+
+    document.querySelector(".x_body_second").innerHTML =
+        data.secondLetter
+            .map(text => `
+                <div class="letter_piece">
+                    <p>${text}</p>
+                </div>
+            `)
+            .join("");
+
+    // X END
+    document.querySelector(".x_end_first").textContent = data.firstName;
+    document.querySelector(".x_end_second").textContent = data.secondName;
+
+    // NEXT LOVE
+    document.querySelector(".next_name_first").textContent = data.firstName;
+    document.querySelector(".next_name_second").textContent = data.secondName;
+
+    document.querySelector(".next_text_first").innerHTML =
+        data.nextLove.first;
+
+    document.querySelector(".next_text_second").innerHTML = 
+    data.nextLove.second;
+
+
+
+}
+
+function initStoryAnimations() {
+
+    // X소개서 후반부 밝아짐
+    gsap.to(".x_letter_section", {
+        backgroundColor: "#F1F0EB",
+        color: "#111517",
+        ease: "none",
+
+        scrollTrigger: {
+            trigger: ".x_letter_section",
+            start: "76% center",
+            end: "bottom bottom",
+            scrub: true
+        }
     });
 
 
-// NEXT LOVE 타이틀
-gsap.to(".next_love_label", {
-    opacity: 1,
-    duration: 1,
-
-    scrollTrigger: {
-        trigger: ".next_love_content",
-        start: "top 75%",
-        toggleActions: "play none none none"
-    }
-});
-
-
-// 질문
-gsap.to(".next_love_header h2", {
-    opacity: 1,
-    duration: 0.3,
-    delay: 0.2,
-
-    scrollTrigger: {
-        trigger: ".next_love_content",
-        start: "top 10%",
-        toggleActions: "play none none none"
-    }
-});
-
-gsap.utils.toArray(".next_answer").forEach((answer) => {
-
-    gsap.fromTo(answer,
-        {
-            opacity: 0
-        },
-        {
-            opacity: 1,
-            duration: 1.2,
-
-            scrollTrigger: {
-                trigger: answer,
-                start: "top 50%",
-                toggleActions: "play none none none"
-            }
+    // 곽빈 × 정철원
+    const xEndTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".x_end",
+            start: "top top",
+            end: "+=70%",
+            scrub: true,
+            pin: true
         }
-    );
+    });
 
-});
+    xEndTl
+        .to({}, { duration: 0.4 })
+        .to(".x_end_mark", {
+            opacity: 0,
+            duration: 0.9
+        });
 
+
+    // NEXT LOVE
+    gsap.to(".next_love_label", {
+        opacity: 1,
+        duration: 1,
+
+        scrollTrigger: {
+            trigger: ".next_love_content",
+            start: "top 75%",
+            toggleActions: "play none none none"
+        }
+    });
+
+
+    gsap.to(".next_love_header h2", {
+        opacity: 1,
+        duration: 0.8,
+
+        scrollTrigger: {
+            trigger: ".next_love_content",
+            start: "top 65%",
+            toggleActions: "play none none none"
+        }
+    });
+
+
+    gsap.utils.toArray(".next_answer").forEach((answer) => {
+
+        gsap.fromTo(answer,
+            {
+                opacity: 0
+            },
+            {
+                opacity: 1,
+                duration: 1.2,
+
+                scrollTrigger: {
+                    trigger: answer,
+                    start: "top 55%",
+                    toggleActions: "play none none none"
+                }
+            }
+        );
+
+    });
+
+}
+
+
+let gwakcheolStoryOpened = false;
+
+function openGwakcheolStory() {
+
+    // 이미 열렸으면 다시 실행하지 않기
+    if (gwakcheolStoryOpened) return;
+
+    gwakcheolStoryOpened = true;
+
+    // 곽철 X소개서 내용 넣기
+    setStory("gwakcheol");
+
+    // 숨겨둔 영역 열기
+    document.querySelector(".x_letter_section").style.display = "block";
+    document.querySelector(".x_end").style.display = "flex";
+    document.querySelector(".next_intro").style.display = "flex";
+    document.querySelector(".next_love_content").style.display = "block";
+
+    // 화면이 열린 다음 GSAP 연결
+    requestAnimationFrame(() => {
+
+        initLetterFade();
+        initStoryAnimations();
+
+        ScrollTrigger.refresh();
+
+    });
+
+}
