@@ -854,6 +854,97 @@ html{
 
 
 
+/* STORY COMPLETE */
+
+.story_complete {
+    width: 100%;
+    min-height: 100vh;
+    padding: 180px 30px;
+
+    background-color: #F1F0EB;
+    color: #111517;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Song Myung", serif;
+    text-align: center;
+    display: none;
+}
+
+
+.story_complete_text {
+    font-size: 22px;
+    line-height: 1.8;
+    margin-bottom: 200px;
+}
+
+
+
+.story_complete_buttons {
+    width: min(500px, 80%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.story_complete_buttons.has_result {
+    justify-content: space-between;
+}
+
+
+.story_complete_buttons button {
+    border: 0;
+    padding: 10px 0;
+
+    background: transparent;
+    color: inherit;
+
+    font-family: inherit;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.story_complete_buttons button span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+
+/* 다른 이야기 보기 ↑ */
+.story_return_btn span {
+    margin-right: 12px;
+}
+
+.story_return_btn:hover span {
+    transform: translateY(-6px);
+}
+
+
+/* 최종 결과 보기 ↓ */
+.story_result_btn span {
+    margin-left: 12px;
+}
+
+.story_result_btn:hover span {
+    transform: translateY(6px);
+}
+
+
+.story_complete_line {
+    width: 1.5px;
+    height: 300px;
+    margin-bottom: 55px;
+
+    background-color: rgba(17, 21, 23, 0.35);
+
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+
 
 
 

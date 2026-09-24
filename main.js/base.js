@@ -1734,6 +1734,17 @@ function setStory(coupleKey) {
 
     if (!data) return;
 
+    const storyColors = {
+        emerald: "#314149",
+        purple: "#3F3547"
+    };
+
+    document.documentElement.style.setProperty(
+        "--story-dark-color",
+        storyColors[data.theme]
+    );
+
+
     // X소개서 이름
     document.querySelector(".x_name_first").textContent = data.firstTitle;
     document.querySelector(".x_name_second").textContent = data.secondTitle;
@@ -1804,6 +1815,7 @@ function initStoryAnimations() {
     // 곽빈 × 정철원
     const xEndTl = gsap.timeline({
         scrollTrigger: {
+            id: "xEndTrigger",
             trigger: ".x_end",
             start: "top top",
             end: "+=70%",
@@ -1908,10 +1920,46 @@ gsap.utils.toArray(".next_person_answer").forEach((answer) => {
 
 });
 
+
+
+  // STORY COMPLETE 배경 전환
+gsap.to(".story_complete", {
+    backgroundColor: "var(--story-dark-color)",
+    color: "#E7E7E3",
+    ease: "none",
+
+    scrollTrigger: {
+        trigger: ".story_complete",
+        start: "top 85%",
+        end: "top 25%",
+        scrub: 1
+    }
+});
+
+
+
+
+
+    // STORY COMPLETE 세로선
+    gsap.to(".story_complete_line", {
+        scaleY: 1,
+        backgroundColor: "rgba(231, 231, 227, 0.45)",
+        ease: "none",
+
+        scrollTrigger: {
+            trigger: ".story_complete",
+            start: "top 85%",
+            end: "top 45%",
+            scrub: 1
+        }
+    });
+
 }
 
 
 let gwakcheolStoryOpened = false;
+const viewedCouples = new Set();
+
 
 function openGwakcheolStory() {
 
@@ -1929,6 +1977,7 @@ function openGwakcheolStory() {
     document.querySelector(".next_intro").style.display = "flex";
     document.querySelector(".next_love_content").style.display = "block";
     document.querySelector(".next_person_content").style.display = "block";
+    completeStory("gwakcheol");
 
     // 화면이 열린 다음 GSAP 연결
     requestAnimationFrame(() => {
@@ -1940,4 +1989,104 @@ function openGwakcheolStory() {
 
     });
 
+}
+
+
+function completeStory(coupleKey) {
+
+    // 본 커플 기록
+    viewedCouples.add(coupleKey);
+
+    const completeSection = document.querySelector(".story_complete");
+    const resultBtn = document.querySelector(".story_result_btn");
+
+    // 완료 화면 열기
+    completeSection.style.display = "flex";
+
+    // 3커플 이상 봤을 때만 최종 결과 보기
+const buttonBox = document.querySelector(".story_complete_buttons");
+
+if (viewedCouples.size >= 3) {
+    resultBtn.style.display = "block";
+    buttonBox.classList.add("has_result");
+} else {
+    resultBtn.style.display = "none";
+    buttonBox.classList.remove("has_result");
+}
+
+    ScrollTrigger.refresh();
+}
+
+
+document.querySelector(".story_return_btn").addEventListener("click", () => {
+
+    resetDungsil();
+    closeCurrentStory();
+
+    document.querySelector(".dungsil_section").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+});
+
+
+
+function resetDungsil() {
+
+    // 모든 대사 위치 + 투명도 원상복구
+    gsap.set(".dialogue", {
+        x: 0,
+        y: 0,
+        opacity: 1
+    });
+
+    // 커플명 숨기기
+    gsap.set(".couple_name", {
+        opacity: 0
+    });
+
+    gsap.set(".couple_name span", {
+        opacity: 0
+    });
+
+    // 기간 정보 숨기기
+    gsap.set(
+        ".couple_info_01, .couple_info_02, .couple_info_03, .couple_info_04, .couple_info_05",
+        {
+            opacity: 0
+        }
+    );
+
+    // 다시 고르기 숨기기
+    gsap.set(".back_to_dungsil", {
+        opacity: 0,
+        pointerEvents: "none"
+    });
+}
+
+function closeCurrentStory() {
+
+
+    // X-END pin 제거
+    const xEndTrigger = ScrollTrigger.getById("xEndTrigger");
+
+    if (xEndTrigger) {
+        xEndTrigger.kill();
+    }
+
+    interviewSection.classList.remove("is_open");
+    threeWordsSection.classList.remove("is_open");
+
+    interviewPlayed = false;
+    interviewTriggerCreated = false;
+
+    document.querySelector(".x_letter_section").style.display = "none";
+    document.querySelector(".x_end").style.display = "none";
+    document.querySelector(".next_intro").style.display = "none";
+    document.querySelector(".next_love_content").style.display = "none";
+    document.querySelector(".next_person_content").style.display = "none";
+    document.querySelector(".story_complete").style.display = "none";
+
+    gwakcheolStoryOpened = false;
 }
