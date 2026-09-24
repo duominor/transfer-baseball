@@ -1294,10 +1294,6 @@ storyWords.forEach((word) => {
 
         if (!currentThreeWords) return;
 
-        // 곽철에서 키워드를 하나라도 선택하면 X소개서 열기
-if (currentThreeWordsKey === "gwakcheol") {
-    openGwakcheolStory();
-}
 
 
         // 중복 클릭 방지
@@ -1506,10 +1502,15 @@ function playWordsAnswers() {
     })
 
 
-    // ↓
-    .call(function () {
-        startWordsNextScrollCue();
-    });
+// ↓
+.call(function () {
+
+    if (currentThreeWordsKey === "gwakcheol") {
+        openGwakcheolStory();
+    }
+
+    startWordsNextScrollCue();
+});
 
 }
 
@@ -1930,7 +1931,7 @@ gsap.to(".story_complete", {
 
     scrollTrigger: {
         trigger: ".story_complete",
-        start: "top 85%",
+        start: "top 55%",
         end: "top 25%",
         scrub: 1
     }
@@ -1948,7 +1949,7 @@ gsap.to(".story_complete", {
 
         scrollTrigger: {
             trigger: ".story_complete",
-            start: "top 85%",
+            start: "top 55%",
             end: "top 45%",
             scrub: 1
         }

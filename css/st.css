@@ -859,7 +859,7 @@ html{
 .story_complete {
     width: 100%;
     min-height: 100vh;
-    padding: 180px 30px;
+    padding: 0 30px;
 
     background-color: #F1F0EB;
     color: #111517;
@@ -875,7 +875,7 @@ html{
 
 
 .story_complete_text {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1.8;
     margin-bottom: 200px;
 }
