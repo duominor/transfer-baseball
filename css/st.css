@@ -685,7 +685,7 @@ html{
 
 .x_letter_section {
     width: 100%;
-    background: #314149;
+    background: var(--story-dark-color);
     color: #E7E7E3;
 }
 
@@ -875,7 +875,7 @@ html{
 
 
 .story_complete_text {
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1.8;
     margin-bottom: 150px;
 }
@@ -900,7 +900,7 @@ html{
     background: transparent;
     color: inherit;
     font-family: inherit;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
 }
 

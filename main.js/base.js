@@ -1505,10 +1505,9 @@ function playWordsAnswers() {
 // ↓
 .call(function () {
 
-    if (currentThreeWordsKey === "gwakcheol") {
-        openGwakcheolStory();
-    }
-
+if (storyData[currentThreeWordsKey]) {
+    openStory(currentThreeWordsKey);
+}
     startWordsNextScrollCue();
 });
 
@@ -1681,20 +1680,124 @@ const storyData = {
 
         nextLove: {
             first:
-                `네,
+                `“네,
                 철원이도 좋은 사람을 만났으면 좋겠습니다.
-                힘들 때는 그 사람한테 꼭 말했으면 좋겠고요.`,
+                힘들 때는 그 사람한테 꼭 말했으면 좋겠고요.”`,
 
             second:
-                `네,
-                다시 누군가를 많이 좋아해보고 싶어요.`
+                `“네,
+                다시 누군가를 많이 좋아해보고 싶어요.”`
         },
 
         nextPerson: {
-            first: `귀여운 사람이요.
-                제가 귀여운 사람을 좋아해서요.`,
+            first: `“귀여운 사람이요.
+                제가 귀여운 사람을 좋아해서요.”`,
 
-            second: `좋아하면 좋아한다고 티 많이 내주는 사람이요.`
+            second: `“좋아하면 좋아한다고 티 많이 내주는 사람이요.”`
+        }
+
+       
+    },
+
+
+
+       sanggeon: {
+        firstName: "박상원",
+        secondName: "박건우",
+
+        firstTitle: "박상원 → 박건우",
+        secondTitle: "박건우 → 박상원",
+
+        theme: "purple",
+
+
+        firstLetter: [
+            `저는 사람에게 쉽게 다가가는 편이 아니고
+             가까워져도 늘 돌아설 자리를 남겨두는 사람이었습니다.
+             그런 저를 형은 자꾸 앞으로 나오게 했습니다.
+             투덜거리면서 챙겨주고, 제가 피하면 다시 말을 걸고,
+             애매하게 넘기려는 순간에는 꼭 대답을 기다렸습니다.
+             그래서 결국 제가 졌습니다.`,
+
+            `연애를 시작하고 나서도
+             형은 크게 달라지지 않았습니다.
+             그런데 저는 많이 달라졌습니다.
+             형이 먼저 보고 싶다고 하면 좋았고,
+             저를 찾는 게 좋았고,
+             형한테 제가 특별한 사람이라는 게 좋았습니다.`,
+
+            `아마 그때부터였던 것 같습니다.
+             형이 저를 좋아한다는 걸
+             너무 당연하게 믿기 시작한 게.
+             제가 말을 하지 않아도 먼저 물어봤고,
+             괜찮다고 하면 정말 괜찮은 건지 한 번 더 물었습니다.`,
+
+            `처음에는 그게 좋았습니다.
+             제가 굳이 말하지 않아도
+             형이 먼저 알아주는 것 같았으니까요.
+             그런데 어느 순간부터
+             그게 당연해졌던 것 같습니다.`,
+
+            `마지막까지 그랬습니다.
+             그래서 한번쯤은 먼저 붙잡아봤다면 하고 후회하기도 해요.
+             한 번 더 기회가 있다면, 이번에는 제가 먼저 붙잡아 보고 싶어요.`
+        ],
+
+
+        secondLetter: [
+             `  상원이는 생각보다 겁이 많은 사람입니다.
+                마음이 없는 것처럼 행동하는 데 익숙하고
+                괜찮다고 말하면서 혼자 생각하는 시간이 깁니다.
+                그래서 답답했던 적도 많았습니다.
+                좋으면 좋다고 하면 될 일을
+                혼자 끝까지 생각하고 있었으니까요.
+                그래도 재촉하고 싶지는 않았습니다.
+                제가 조금 더 다가가면
+                언젠가는 이 사람이 피하지 않을 거라고 생각했습니다.`,
+
+            `   연애를 시작하고 나서도
+                상원이는 여전히 말이 많지 않았습니다.
+                그래도 저는 그게 싫지 않았습니다.
+                표정을 보면 대충 알 것 같았고,
+                기다리면 결국에는 말해줬으니까요.`,
+
+            `   상원이가 먼저 말을 해주는 날은
+                그래서 더 좋았습니다.
+                별거 아닌 이야기를 먼저 해주거나
+                먼저 보고 싶다고 말해주면
+                저는 그게 꽤 오래 기억에 남았습니다.
+                제가 기다린 만큼
+                조금씩 가까워지고 있다는 생각이 들었거든요.`,
+
+            `   그렇게 두번의 계절이 지나갔습니다.
+                상원이가 괜찮다고 해도 괜찮지 않은 날이 있다는 것도,
+                혼자 생각할 시간이 필요한 사람이라는 것도
+                이제는 제가 꽤 잘 안다고 생각했습니다.
+                그래서 오히려 어느 순간부터 어려워졌습니다.
+                예전 같으면 한 번 더 물어봤을 일을
+                이제는 그냥 기다려야 하나 싶었고,
+                기다리고 있으면 또
+                내가 먼저 물어봐야 하나 싶었으니까요.`,
+
+            `   상원이를 잘 안다고 생각했는데
+                오래 만났다는 이유로 제가 다 안다고 생각하는 건 아닐까 싶더라고요.
+                그게 저희가 헤어진 이유였던 것 같습니다.`
+        ],
+
+        nextLove: {
+            first:
+                `“아니요.
+                 아직은 잊지 못한 것 같아서요.”`,
+
+            second:
+                `“네.
+                 좋은 사람이 생기면 굳이 피하고 싶지는 않아요.”`
+        },
+
+        nextPerson: {
+            first: `“같이 있으면 제가 솔직해지는 사람이요.”`,
+
+            second: `“마음을 알기 어렵지 않은 사람이요.”`
         }
 
        
@@ -1737,13 +1840,18 @@ function setStory(coupleKey) {
 
     const storyColors = {
         emerald: "#314149",
-        purple: "#3F3547"
+        purple: "#3e3546"
     };
 
     document.documentElement.style.setProperty(
         "--story-dark-color",
         storyColors[data.theme]
     );
+
+    gsap.set(".x_letter_section", {
+    backgroundColor: storyColors[data.theme],
+    color: "#E7E7E3"
+    });
 
 
     // X소개서 이름
@@ -1962,15 +2070,15 @@ let gwakcheolStoryOpened = false;
 const viewedCouples = new Set();
 
 
-function openGwakcheolStory() {
+function openStory(coupleKey) {
 
     // 이미 열렸으면 다시 실행하지 않기
     if (gwakcheolStoryOpened) return;
 
     gwakcheolStoryOpened = true;
 
-    // 곽철 X소개서 내용 넣기
-    setStory("gwakcheol");
+    // 선택한 커플 X소개서 내용 넣기
+    setStory(coupleKey);
 
     // 숨겨둔 영역 열기
     document.querySelector(".x_letter_section").style.display = "block";
@@ -1978,7 +2086,8 @@ function openGwakcheolStory() {
     document.querySelector(".next_intro").style.display = "flex";
     document.querySelector(".next_love_content").style.display = "block";
     document.querySelector(".next_person_content").style.display = "block";
-    completeStory("gwakcheol");
+
+    completeStory(coupleKey);
 
     // 화면이 열린 다음 GSAP 연결
     requestAnimationFrame(() => {
