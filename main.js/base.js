@@ -1172,7 +1172,7 @@ yoonhan: {
 
             question: "Q. 두 사람이 가까워진 3년을 어떻게 기억하나요?",
             first: "“제가 태양이한테 공들인 시간이요. 진짜 오래 걸렸다고 생각했습니다.”",
-            second: "“저는 좀 다르게 기억합니다. 좋아하는 사람이 계속 가까워지던 시간이었어요.”"
+            second: "“좋아하는 사람이 계속 가까워지던 시간이었어요.”"
         },
 
         word3: {
@@ -1788,7 +1788,7 @@ const storyData = {
                  아직은 잊지 못한 것 같아서요.”`,
 
             second:
-                `“네.
+                `“네,
                  좋은 사람이 생기면 굳이 피하고 싶지는 않아요.”`
         },
 
@@ -1799,7 +1799,112 @@ const storyData = {
         }
 
        
+    },
+
+
+        dongtae: {
+        firstName: "문동주",
+        secondName: "원태인",
+
+        firstTitle: "문동주 → 원태인",
+        secondTitle: "원태인 → 문동주",
+
+        theme: "purple",
+
+
+        firstLetter: [
+            `태인이형과의 시작은 꽤나 어려웠어요.
+             서로 좋아하는 건 아는데도,
+             지금의 우리를 망쳐버릴까봐 무서웠거든요.
+             그냥 늘 하듯이 장난치고, 챙겨주면서 그렇게 지내면 
+             우리는 그냥 친한사이로만 남을 수도 있었겠죠.`,
+
+            `먼저 손을 내민 쪽은 형이었어요.
+             대답은 이미 정해져있었고, 그냘 처음 손을 잡고 걸었어요.
+             너무 실감이 안나서
+             어디를 보고 있어야 할지도 모르겠더라고요.`,
+
+            `친구일 때도 충분히 가까웠다고 생각했는데,
+             연인이 되고 나서 처음 알게 되는 형의 모습들이 있었습니다.  
+             생각보다 애교도 많았고,
+             보고 싶다는 말도 잘했고,
+             제가 챙겨주면 생각보다 많이 좋아했습니다.  
+             그런 걸 하나씩 알아가는 게 좋았어요.`,
+
+            `그런데 시간이 지나면서
+             다른 것까지 조심하게 됐습니다.
+             형이 힘들어 보이는 날에는
+             제 얘기까지 하면 더 힘들 것 같았고,
+             제가 힘든 날에도
+             그냥 괜찮다고 하는 게 나을 것 같았습니다.
+             형한테 기대고 싶지 않았던 건 아닙니다.
+             오히려 제가 좋아하는 사람이니까
+             힘든 걸 하나라도 덜어주고 싶었습니다.`,
+
+            `지금 생각하면
+             형을 너무 아꼈던 것 같습니다.
+             조금만 덜 아낄 걸 그랬습니다.`
+        ],
+
+
+        secondLetter: [
+             `  동주는 생각보다 솔직하지 못한 사람입니다.
+                보고 싶으면서 심심하다고 하고,
+                제 옆에 있고 싶으면 우연인 것처럼 찾아왔습니다.
+                저는 그걸 대부분 알고 있었지만, 모른척 넘겼습니다.
+                동주가 한 걸음 더 다가오면
+                제가 먼저 선을 그었고,
+                정말 멀어지는 것 같으면 다시 불러 세웠습니다.`,
+
+            `   지금 생각하면 참 이기적이었습니다.
+                가까워지는 건 무서우면서
+                이 사람이 제 곁에서 사라지는 건 더 싫었습니다.
+                그래서 먼저 고백하기까지 고민이 많았습니다.
+                그런데 그냥 이런 사이로 남으면 후회할 것 같았어요,
+                지금 이 애매한 감정을 가지고 시간만 흐르는게 아까웠으니까요.`,
+
+            `   연애를 시작하고 나서 한동안은
+                생각보다 달라진 게 별로 없었습니다.
+                만나면 여전히 야구 얘기를 제일 많이 했고,
+                장난치다가 하루가 다 가기도 했습니다.
+                그런데 가끔 동주가 갑자기 조용해질 때가 있었습니다.
+                예전 같았으면 무슨 일 있냐고 바로 물어봤을 텐데
+                그때부터는 저도 한 번씩 망설였습니다.
+                중요한 경기를 앞두고 있을 때도 있었고,
+                자기 몫으로 감당해야 할 일이 있다는 것도 알았습니다.
+                그래서 기다렸습니다.
+                말하고 싶으면 말하겠지.
+                필요하면 나를 찾겠지.
+                그런데 아마 동주도
+                저한테 비슷한 생각을 했던 것 같습니다.`,
+
+            `   길지 않은 연애였지만,
+                문동주라는 사람을 알게 됐다는 건 
+                행복했던 시간이었어요.
+                얼른 나아서 다시 마운드에서 만나자. 
+                그 때는 동료로.`
+        ],
+
+        nextLove: {
+            first:
+                `“제가 조금 더 괜찮아지면요”`,
+
+            second:
+                `“네,
+                  다음에는 괜찮은 척을 조금 덜 해보려고요.”`
+        },
+
+        nextPerson: {
+            first: `“저한테 많이 기대는 사람이요.
+                     그러면 저도 좀 편하게 기댈 수 있을 것 같아요.”`,
+
+            second: `“잃어도 괜찮을 것 같은 사람이요.”`
+        }
+
+       
     }
+
+
 
 };
 
@@ -1838,7 +1943,7 @@ function setStory(coupleKey) {
 
     const storyColors = {
         emerald: "#314149",
-        purple: "#3e3546"
+        purple:"#373743"
     };
 
     document.documentElement.style.setProperty(
@@ -1883,10 +1988,10 @@ function setStory(coupleKey) {
     document.querySelector(".next_name_first").textContent = data.firstName;
     document.querySelector(".next_name_second").textContent = data.secondName;
 
-    document.querySelector(".next_text_first").innerHTML =
-        data.nextLove.first;
+   document.querySelector(".next_love_content .next_text_first").innerHTML =
+    data.nextLove.first;
 
-    document.querySelector(".next_text_second").innerHTML = 
+    document.querySelector(".next_love_content .next_text_second").innerHTML =
     data.nextLove.second;
 
     // NEXT PERSON
@@ -2114,7 +2219,7 @@ function completeStory(coupleKey) {
     // 3커플 이상 봤을 때만 최종 결과 보기
 const buttonBox = document.querySelector(".story_complete_buttons");
 
-if (viewedCouples.size >= 3) {
+if (viewedCouples.size >= 4) {
     resultBtn.style.display = "block";
     buttonBox.classList.add("has_result");
 } else {
