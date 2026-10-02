@@ -1943,7 +1943,7 @@ function setStory(coupleKey) {
 
     const storyColors = {
         emerald: "#314149",
-        purple:"#373743"
+        purple:"#3B3948"
     };
 
     document.documentElement.style.setProperty(
