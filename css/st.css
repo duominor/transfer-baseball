@@ -1119,6 +1119,13 @@ html{
 }
 
 
+.story_complete_buttons.has_result {
+    gap: 60px;
+    width: 100%;
+
+}
+
+
 .story_complete_buttons button {
     border: 0;
     padding: 10px 0;
@@ -1136,7 +1143,16 @@ html{
 }
 
 
+
+
 /* 다른 이야기 보기 ↑ */
+
+
+.story_return_btn{
+   flex-shrink: 0;
+}
+
+
 .story_return_btn span {
     margin-right: 12px;
 }
