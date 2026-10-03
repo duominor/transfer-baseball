@@ -1109,7 +1109,7 @@ html{
 
 .story_complete_buttons {
     width: min(500px, 80%);
-    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -1120,7 +1120,7 @@ html{
 
 
 .story_complete_buttons.has_result {
-    gap: 60px;
+    gap: 10px;
     width: 100%;
 
 }
